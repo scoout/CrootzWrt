@@ -16,6 +16,6 @@
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall.git' >>feeds.conf.default
-echo 'src-git passwall-package https://github.com/xiaorouji/openwrt-passwall-packages.git' >>feeds.conf.default
+echo 'src-git passpackage https://github.com/xiaorouji/openwrt-passwall-packages.git' >>feeds.conf.default
 echo 'src-git modemfeed https://github.com/scoout/modemfeed.git' >>feeds.conf.default
 echo 'src-git OpenClash https://github.com/vernesong/OpenClash.git' >> feeds.conf.default
