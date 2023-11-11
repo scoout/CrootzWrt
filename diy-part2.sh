@@ -9,8 +9,8 @@
 # File name: diy-part2.sh
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
-# Rubah versi kernel
 
+# Rubah versi kernel
 sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=6.1/g' openwrt/target/linux/x86/Makefile
 
 # Misalnya, untuk mengubah zona waktu menjadi 'WIB-7'
@@ -26,7 +26,6 @@ sed -i '/^add_list system.ntp.server/c\add_list system.ntp.server='0.id.pool.ntp
 sed -i '/^add_list system.ntp.server/c\add_list system.ntp.server='1.id.pool.ntp.org'' package/base-files/files/bin/config_generate
 sed -i '/^add_list system.ntp.server/c\add_list system.ntp.server='2.id.pool.ntp.org'' package/base-files/files/bin/config_generate
 sed -i '/^add_list system.ntp.server/c\add_list system.ntp.server='3.id.pool.ntp.org'' package/base-files/files/bin/config_generate
-
 
 
 # Modify default IP
