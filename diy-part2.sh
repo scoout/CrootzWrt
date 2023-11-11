@@ -11,7 +11,7 @@
 #
 
 # Rubah versi kernel
-sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=6.1/g' openwrt/target/linux/x86/Makefile
+sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=6.1/g' target/linux/x86/Makefile
 
 # Misalnya, untuk mengubah zona waktu menjadi 'WIB-7'
 sed -i '/^system\.@system\[0\]\.timezone/c\set system.@system[0].timezone='WIB-7'' package/base-files/files/bin/config_generate
