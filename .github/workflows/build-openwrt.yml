@@ -1,18 +1,13 @@
 name: Build OpenWrt
 
-on: 
+on:
   repository_dispatch:
   workflow_dispatch:
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@master
-
-    - name: Initialization environment
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt
