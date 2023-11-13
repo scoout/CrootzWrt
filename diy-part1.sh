@@ -21,4 +21,3 @@ echo 'src-git passpackage https://github.com/xiaorouji/openwrt-passwall-packages
 echo 'src-git modemfeed https://github.com/koshev-msk/modemfeed.git' >>feeds.conf.default
 echo 'src-git OpenClash https://github.com/vernesong/OpenClash.git' >> feeds.conf.default
 echo 'src-git Rooter https://github.com/scoout/ROOterSource2305.git' >>feeds.conf.default
-echo 'src-git luci https://github.com/immortalwrt/luci.git' > feeds.conf.default
