@@ -85,14 +85,12 @@ jobs:
       run: |
         cd openwrt
         echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 || make -j1 V=s
+        make -j$(nproc) || make -j1 || make -j1 V=sc
         echo "status=success" >> $GITHUB_ENV
       continue-on-error: true
 
-    - name: Upload bin directory
+    - name: Upload Artifact
       uses: actions/upload-artifact@v3
-      if: success() && env.UPLOAD_BIN_DIR == 'true'
       with:
-        name: OpenWrt_bin
+        name: OpenWrt
         path: openwrt/bin
-        
