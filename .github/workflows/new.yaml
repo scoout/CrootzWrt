@@ -32,7 +32,7 @@ jobs:
         node-version: 16
 
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Initialization environment
       env:
@@ -90,7 +90,7 @@ jobs:
       continue-on-error: true
 
     - name: Upload bin directory
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       if: success() && env.UPLOAD_BIN_DIR == 'true'
       with:
         name: OpenWrt_bin
