@@ -10,7 +10,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_URL: https://github.com/scoout/openwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
@@ -66,15 +66,6 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
-        echo 'src-git immortalwrt-luci https://github.com/immortalwrt/luci.git' >> feeds.conf.default
-
-    - name: Copy luci-base and luci-mod-status
-      run: |
-        rm -rf openwrt/feeds/luci/modules/luci-base
-        cp -rf /workdir/immortalwrt-luci/modules/luci-base openwrt/feeds/luci/modules
-        rm -rf openwrt/feeds/luci/modules/luci-mod-status
-        cp -rf /workdir/immortalwrt-luci/modules/luci-mod-status openwrt/feeds/luci/modules
-      working-directory: /workdir
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
@@ -85,7 +76,6 @@ jobs:
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
